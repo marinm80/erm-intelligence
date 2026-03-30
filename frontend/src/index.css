@@ -1,0 +1,40 @@
+@import "tailwindcss";
+
+:root {
+  /* Brand Colors */
+  --color-brand-red: #E42313;
+  --color-brand-dark: #0D0D0D;
+  
+  /* Technical Warm Palette */
+  --color-stone-50: #FAFAF9;
+  --color-stone-100: #F1F1F1;
+  --color-stone-200: #E7E5E4;
+  --color-stone-400: #A8A29E;
+  --color-stone-500: #78716C;
+  --color-stone-800: #292524;
+}
+
+@theme {
+  --font-display: "Space Grotesk", sans-serif;
+  --font-sans: "Inter", sans-serif;
+  --font-mono: "JetBrains Mono", monospace;
+}
+
+@layer base {
+  html, body {
+    height: 100%;
+    background-color: var(--color-stone-50);
+    color: var(--color-stone-800);
+    @apply font-sans;
+  }
+
+  h1, h2, h3, h4 {
+    @apply font-display font-semibold tracking-tight;
+  }
+}
+
+@layer utilities {
+  .container-custom {
+    @apply max-w-[1126px] mx-auto px-6 w-full;
+  }
+}
