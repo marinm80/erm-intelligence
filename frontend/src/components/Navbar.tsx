@@ -15,12 +15,16 @@ export const Navbar = () => {
         
         <nav className="hidden md:flex items-center gap-8 text-sm font-medium text-[var(--color-stone-500)]">
           <a href="#soluciones" className="hover:text-[var(--color-brand-red)] transition-colors">Soluciones</a>
-          <a href="#recursos" className="hover:text-[var(--color-brand-red)] transition-colors">Recursos</a>
+          <a href="#careers" className="relative hover:text-[var(--color-brand-red)] transition-colors group">
+            Careers
+            <span className="absolute -top-3 -right-6 px-1.5 py-0.5 rounded-full bg-red-100 text-[8px] text-[var(--color-brand-red)] font-bold animate-bounce">HIRING</span>
+          </a>
           <a href="#sobre-nosotros" className="hover:text-[var(--color-brand-red)] transition-colors">Sobre Nosotros</a>
+          <a href="#contacto" className="hover:text-[var(--color-brand-red)] transition-colors">Contáctenos</a>
         </nav>
 
-        <button className="flex items-center gap-2 bg-[var(--color-brand-dark)] text-white px-5 py-2.5 rounded-full text-sm font-semibold hover:bg-stone-800 transition-all group">
-          Portal Cliente
+        <button className="flex items-center gap-2 bg-[var(--color-brand-dark)] text-white px-6 py-2.5 rounded-full text-sm font-semibold hover:bg-stone-800 transition-all group">
+          Solicitar Cotización
           <ChevronRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
         </button>
       </div>
