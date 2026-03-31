@@ -33,6 +33,11 @@ Este documento establece las reglas crÃ­ticas y el progreso del proyecto ERM I
     - [x] Sección de Soluciones (Refactorizada).
     - [x] Sección de Contacto (Formulario de solicitud de servicios).
     - [x] Footer corporativo sincronizado con Pencil.
+- **Careers Portal:**
+    - [x] Routing con react-router-dom (`/` y `/careers`).
+    - [x] CareersPage layout con Hero.
+    - [x] JobGrid y JobCard (Listado de posiciones con filtro).
+    - [x] ApplicationForm con soporte drag & drop de CV.
 - **Client Platform (En Pausa):**
     - [ ] Layout de Dashboard.
     - [ ] Vista de Inventario de Riesgos.
@@ -44,6 +49,10 @@ Este documento establece las reglas crÃ­ticas y el progreso del proyecto ERM I
 - **Risk Module:**
     - [x] Modelo, Repositorio y Servicio de `Risk`.
     - [x] Endpoints CRUD para `/api/risks`.
+- **Careers Module:**
+    - [x] Tabla `applications` en la BD (Esquema SQL).
+    - [x] Endpoint `POST /api/careers/apply` con `multer` para subida local de CV.
+    - [x] Modelo, Repositorio, Servicio y Controlador de `Application`.
 
 ---
 
@@ -51,3 +60,4 @@ Este documento establece las reglas crÃ­ticas y el progreso del proyecto ERM I
 - **2026-03-30:** Auditoría técnica y Commit Base.
 - **2026-03-30:** Integración de sección 'Careers' y simplificación estratégica (eliminación de Academy/Seguridad).
 - **2026-03-30:** Implementación de flujo de Cotización y sección de Contacto. Refactoring completo de componentes frontend.
+- **2026-03-30:** Desarrollo integral de Careers (Job portal, Routing, `multer` file upload, PostgreSQL repo). Corrección de errores de ES Modules y tipado estricto.
