@@ -1,7 +1,6 @@
 import { useState, useRef } from 'react';
 import type { JobPosition, JobApplication } from '../../types/careers';
 import { UploadCloud, CheckCircle2, AlertCircle, X } from 'lucide-react';
-import { useTranslation } from 'react-i18next';
 
 interface ApplicationFormProps {
   jobs: JobPosition[];
@@ -9,7 +8,6 @@ interface ApplicationFormProps {
 }
 
 export const ApplicationForm = ({ jobs, selectedJobId }: ApplicationFormProps) => {
-  const { t } = useTranslation();
   const [formData, setFormData] = useState<Partial<JobApplication>>({
     positionId: selectedJobId || '',
     fullName: '',
@@ -135,15 +133,15 @@ export const ApplicationForm = ({ jobs, selectedJobId }: ApplicationFormProps) =
         <div className="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-6 shadow-sm border border-green-200">
           <CheckCircle2 className="w-8 h-8 text-green-600" />
         </div>
-        <h3 className="text-2xl font-display font-bold text-green-800">{t('careers.form.success_title')}</h3>
+        <h3 className="text-2xl font-display font-bold text-green-800">¡Postulación Enviada!</h3>
         <p className="text-green-700">
-          {t('careers.form.success_desc')}
+          Gracias por tu interés en ERM Intelligence. Nuestro equipo revisará tu perfil y nos pondremos en contacto contigo pronto.
         </p>
         <button 
           onClick={() => setStatus('idle')}
           className="mt-8 px-6 py-2 bg-green-600 text-white rounded-lg font-bold hover:bg-green-700 transition"
         >
-          {t('careers.form.another')}
+          Enviar otra postulación
         </button>
       </div>
     );
@@ -154,10 +152,10 @@ export const ApplicationForm = ({ jobs, selectedJobId }: ApplicationFormProps) =
       <div className="container-custom max-w-4xl mx-auto space-y-12">
         <div className="text-center space-y-4">
           <h2 className="text-3xl md:text-5xl font-display font-semibold text-[var(--color-stone-800)] tracking-tight">
-            {t('careers.apply')}
+            Aplica Ahora
           </h2>
           <p className="text-[var(--color-stone-500)] text-lg">
-            {t('careers.apply_desc')}
+            Completa el formulario y cuéntanos por qué eres el fit ideal para ERM Intelligence.
           </p>
         </div>
 
@@ -171,7 +169,7 @@ export const ApplicationForm = ({ jobs, selectedJobId }: ApplicationFormProps) =
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
              <div className="space-y-2 md:col-span-2">
-                 <label className="text-xs font-bold uppercase tracking-wider text-[var(--color-stone-500)]">{t('careers.form.position')}</label>
+                 <label className="text-xs font-bold uppercase tracking-wider text-[var(--color-stone-500)]">Cargo al que aplicas *</label>
                  <select 
                    required
                    name="positionId"
@@ -179,7 +177,7 @@ export const ApplicationForm = ({ jobs, selectedJobId }: ApplicationFormProps) =
                    onChange={handleInputChange}
                    className="w-full p-4 bg-[var(--color-stone-50)] border border-[var(--color-stone-200)] rounded-xl focus:outline-none focus:border-[var(--color-brand-red)] focus:ring-1 focus:ring-[var(--color-brand-red)] transition-all font-display text-[var(--color-stone-800)]"
                  >
-                   <option value="" disabled>{t('careers.form.position_placeholder')}</option>
+                   <option value="" disabled>Selecciona una posición</option>
                    {jobs.filter(j => j.isActive).map(job => (
                      <option key={job.id} value={job.id}>{job.title} ({job.contractType} - {job.modality})</option>
                    ))}
@@ -187,7 +185,7 @@ export const ApplicationForm = ({ jobs, selectedJobId }: ApplicationFormProps) =
              </div>
 
              <div className="space-y-2">
-                 <label className="text-xs font-bold uppercase tracking-wider text-[var(--color-stone-500)]">{t('careers.form.name')}</label>
+                 <label className="text-xs font-bold uppercase tracking-wider text-[var(--color-stone-500)]">Nombre Completo *</label>
                  <input 
                    required minLength={3}
                    name="fullName"
@@ -200,7 +198,7 @@ export const ApplicationForm = ({ jobs, selectedJobId }: ApplicationFormProps) =
              </div>
 
              <div className="space-y-2">
-                 <label className="text-xs font-bold uppercase tracking-wider text-[var(--color-stone-500)]">{t('careers.form.email')}</label>
+                 <label className="text-xs font-bold uppercase tracking-wider text-[var(--color-stone-500)]">Email Comercial *</label>
                  <input 
                    required type="email"
                    name="email"
@@ -212,7 +210,7 @@ export const ApplicationForm = ({ jobs, selectedJobId }: ApplicationFormProps) =
              </div>
 
              <div className="space-y-2 md:col-span-2">
-                 <label className="text-xs font-bold uppercase tracking-wider text-[var(--color-stone-500)]">{t('careers.form.linkedin')}</label>
+                 <label className="text-xs font-bold uppercase tracking-wider text-[var(--color-stone-500)]">LinkedIn / Portfolio URL</label>
                  <input 
                    type="url"
                    name="linkedinUrl"
@@ -225,7 +223,7 @@ export const ApplicationForm = ({ jobs, selectedJobId }: ApplicationFormProps) =
 
              <div className="space-y-2 md:col-span-2">
                  <label className="text-xs font-bold uppercase tracking-wider text-[var(--color-stone-500)] flex justify-between">
-                   <span>{t('careers.form.pitch')}</span>
+                   <span>Carta de Motivación / Pitch *</span>
                    <span className="font-mono text-[var(--color-stone-400)] font-normal normal-case">
                      {formData.motivationLetter?.length || 0}/800
                    </span>
@@ -236,12 +234,12 @@ export const ApplicationForm = ({ jobs, selectedJobId }: ApplicationFormProps) =
                    value={formData.motivationLetter}
                    onChange={handleInputChange}
                    className="w-full p-4 bg-[var(--color-stone-50)] border border-[var(--color-stone-200)] rounded-xl focus:outline-none focus:border-[var(--color-brand-red)] transition-colors h-40 resize-y" 
-                   placeholder={t('careers.form.pitch_placeholder')}
+                   placeholder="¿Por qué eres el candidato ideal para ERM Intelligence?"
                  ></textarea>
              </div>
 
              <div className="space-y-2 md:col-span-2">
-                 <label className="text-xs font-bold uppercase tracking-wider text-[var(--color-stone-500)]">{t('careers.form.cv')}</label>
+                 <label className="text-xs font-bold uppercase tracking-wider text-[var(--color-stone-500)]">Sube tu CV (PDF o Word) *</label>
                  <div 
                    onDragOver={handleDragOver}
                    onDragLeave={handleDragLeave}
@@ -265,9 +263,9 @@ export const ApplicationForm = ({ jobs, selectedJobId }: ApplicationFormProps) =
                        </div>
                        <div>
                          <p className="font-display font-bold text-[var(--color-stone-800)] text-lg">
-                           {t('careers.form.drag')} <button type="button" onClick={() => fileInputRef.current?.click()} className="text-[var(--color-brand-red)] hover:underline">{t('careers.form.explore')}</button>
+                           Arrastra tu CV aquí o <button type="button" onClick={() => fileInputRef.current?.click()} className="text-[var(--color-brand-red)] hover:underline">explorar</button>
                          </p>
-                         <p className="text-xs text-[var(--color-stone-400)] mt-1">{t('careers.form.supported')}</p>
+                         <p className="text-xs text-[var(--color-stone-400)] mt-1">Soporta PDF, DOC, DOCX. Max 5MB.</p>
                        </div>
                        {errorMessage && !formData.positionId && (
                            // Hide file error here if it's general submit error, wait, let's just show standard file errors
@@ -299,10 +297,10 @@ export const ApplicationForm = ({ jobs, selectedJobId }: ApplicationFormProps) =
             {status === 'loading' ? (
               <span className="flex items-center gap-2">
                 <span className="w-5 h-5 border-2 border-white/30 border-t-white rounded-full animate-spin"></span>
-                {t('careers.form.sending')}
+                Enviando postulación...
               </span>
             ) : (
-              t('careers.form.submit')
+              'Enviar Postulación'
             )}
           </button>
         </form>
