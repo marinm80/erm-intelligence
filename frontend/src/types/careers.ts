@@ -4,12 +4,12 @@ export type ContractType = 'Full-time' | 'Part-time' | 'Freelance';
 
 export interface JobPosition {
   id: string;
-  title: string;
+  title: { es: string; en: string };
   department: Department;
   modality: ModalityType;
   contractType: ContractType;
-  description: string;
-  requirements: string[];
+  description: { es: string; en: string };
+  requirements: { es: string[]; en: string[] };
   isActive: boolean;
 }
 

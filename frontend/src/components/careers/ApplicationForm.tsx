@@ -1,6 +1,7 @@
 import { useState, useRef } from 'react';
 import type { JobPosition, JobApplication } from '../../types/careers';
 import { UploadCloud, CheckCircle2, AlertCircle, X } from 'lucide-react';
+import { useTranslation } from 'react-i18next';
 
 interface ApplicationFormProps {
   jobs: JobPosition[];
@@ -8,6 +9,9 @@ interface ApplicationFormProps {
 }
 
 export const ApplicationForm = ({ jobs, selectedJobId }: ApplicationFormProps) => {
+  const { t, i18n } = useTranslation();
+  const lang = i18n.language === 'en' ? 'en' : 'es';
+
   const [formData, setFormData] = useState<Partial<JobApplication>>({
     positionId: selectedJobId || '',
     fullName: '',
@@ -179,7 +183,7 @@ export const ApplicationForm = ({ jobs, selectedJobId }: ApplicationFormProps) =
                  >
                    <option value="" disabled>Selecciona una posición</option>
                    {jobs.filter(j => j.isActive).map(job => (
-                     <option key={job.id} value={job.id}>{job.title} ({job.contractType} - {job.modality})</option>
+                     <option key={job.id} value={job.id}>{job.title[lang]} ({t(`careers.contracts.${job.contractType}`)} - {t(`careers.modalities.${job.modality}`)})</option>
                    ))}
                  </select>
              </div>
