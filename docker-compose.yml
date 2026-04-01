@@ -1,0 +1,20 @@
+version: "3.9"
+
+services:
+  postgres:
+    image: postgres:16-alpine
+    container_name: erm_postgres
+    restart: unless-stopped
+    environment:
+      POSTGRES_USER: erm_user
+      POSTGRES_PASSWORD: erm_password
+      POSTGRES_DB: erm_intelligence
+    ports:
+      - "5432:5432"
+    volumes:
+      - erm_postgres_data:/var/lib/postgresql/data
+      - ./backend/src/config/init.sql:/docker-entrypoint-initdb.d/init.sql:ro
+
+volumes:
+  erm_postgres_data:
+    driver: local

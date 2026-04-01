@@ -1,0 +1,15 @@
+{
+  "name": "erm-intelligence",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "dev": "concurrently --kill-others-on-fail --names \"backend,frontend\" --prefix-colors \"cyan,magenta\" \"npm run dev --prefix backend\" \"npm run dev --prefix frontend\"",
+    "build": "npm run build --prefix backend && npm run build --prefix frontend",
+    "db:up": "docker-compose up -d",
+    "db:down": "docker-compose down",
+    "db:reset": "docker-compose down -v && docker-compose up -d"
+  },
+  "devDependencies": {
+    "concurrently": "^8.2.2"
+  }
+}
