@@ -56,6 +56,13 @@ const resources = {
           "success_title": "¡Postulación Enviada!",
           "success_desc": "Gracias por tu interés en ERM Intelligence. Nuestro equipo revisará tu perfil y nos pondremos en contacto contigo pronto.",
           "another": "Enviar otra postulación"
+        },
+        "view_offer": "Ver oferta completa",
+        "detail": {
+          "back": "Volver a ofertas",
+          "requirements": "Requisitos",
+          "apply_title": "Aplicar a esta posición",
+          "not_found": "Oferta no encontrada"
         }
       },
       "hero": {
@@ -206,6 +213,13 @@ const resources = {
           "success_title": "Application Submitted!",
           "success_desc": "Thank you for your interest in ERM Intelligence. Our team will review your profile and contact you soon.",
           "another": "Submit another application"
+        },
+        "view_offer": "View full offer",
+        "detail": {
+          "back": "Back to offers",
+          "requirements": "Requirements",
+          "apply_title": "Apply for this position",
+          "not_found": "Position not found"
         }
       },
       "hero": {

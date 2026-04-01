@@ -1,5 +1,7 @@
 import type { JobPosition } from '../../types/careers';
 import { MapPin, Clock } from 'lucide-react';
+import { Link } from 'react-router-dom';
+import { useTranslation } from 'react-i18next';
 
 interface JobCardProps {
   job: JobPosition;
@@ -7,6 +9,7 @@ interface JobCardProps {
 }
 
 export const JobCard = ({ job, onApply }: JobCardProps) => {
+  const { t } = useTranslation();
   const departmentColors: Record<string, string> = {
     'Engineering': 'bg-blue-100 text-blue-700 border-blue-200',
     'Product': 'bg-purple-100 text-purple-700 border-purple-200',
@@ -43,12 +46,22 @@ export const JobCard = ({ job, onApply }: JobCardProps) => {
         </div>
       </div>
       
-      <button 
-        onClick={() => onApply(job)}
-        className="w-full py-3 bg-stone-100 text-stone-800 rounded-xl font-bold font-display hover:bg-(--color-brand-red) hover:text-white transition-colors group-hover:shadow-md"
-      >
-        Aplicar Ahora
-      </button>
+      <div className="flex flex-col gap-2">
+        <Link
+          to={`/careers/${job.id}`}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="block w-full text-center border border-stone-600 text-stone-300 hover:border-(--color-brand-red) hover:text-(--color-brand-red) py-2 px-4 rounded-lg transition-colors duration-200 text-sm font-medium"
+        >
+          {t('careers.view_offer')}
+        </Link>
+        <button 
+          onClick={() => onApply(job)}
+          className="w-full py-3 bg-stone-100 text-stone-800 rounded-xl font-bold font-display hover:bg-(--color-brand-red) hover:text-white transition-colors group-hover:shadow-md"
+        >
+          Aplicar Ahora
+        </button>
+      </div>
     </div>
   );
 };

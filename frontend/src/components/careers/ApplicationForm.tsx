@@ -175,7 +175,7 @@ export const ApplicationForm = ({ jobs, selectedJobId }: ApplicationFormProps) =
                    name="positionId"
                    value={formData.positionId}
                    onChange={handleInputChange}
-                   className="w-full p-4 bg-[var(--color-stone-50)] border border-[var(--color-stone-200)] rounded-xl focus:outline-none focus:border-[var(--color-brand-red)] focus:ring-1 focus:ring-[var(--color-brand-red)] transition-all font-display text-[var(--color-stone-800)]"
+                   className="w-full p-4 bg-[var(--color-stone-50)] border border-[var(--color-stone-200)] rounded-xl focus:outline-none focus:border-[var(--color-brand-red)] focus:ring-1 focus:ring-[var(--color-brand-red)] transition-all font-display text-black"
                  >
                    <option value="" disabled>Selecciona una posición</option>
                    {jobs.filter(j => j.isActive).map(job => (
@@ -192,7 +192,7 @@ export const ApplicationForm = ({ jobs, selectedJobId }: ApplicationFormProps) =
                    value={formData.fullName}
                    onChange={handleInputChange}
                    type="text" 
-                   className="w-full p-4 bg-[var(--color-stone-50)] border border-[var(--color-stone-200)] rounded-xl focus:outline-none focus:border-[var(--color-brand-red)] transition-colors" 
+                   className="w-full p-4 bg-[var(--color-stone-50)] border border-[var(--color-stone-200)] rounded-xl focus:outline-none focus:border-[var(--color-brand-red)] transition-colors placeholder-black text-black" 
                    placeholder="John Doe" 
                  />
              </div>
@@ -204,7 +204,7 @@ export const ApplicationForm = ({ jobs, selectedJobId }: ApplicationFormProps) =
                    name="email"
                    value={formData.email}
                    onChange={handleInputChange}
-                   className="w-full p-4 bg-[var(--color-stone-50)] border border-[var(--color-stone-200)] rounded-xl focus:outline-none focus:border-[var(--color-brand-red)] transition-colors" 
+                   className="w-full p-4 bg-[var(--color-stone-50)] border border-[var(--color-stone-200)] rounded-xl focus:outline-none focus:border-[var(--color-brand-red)] transition-colors placeholder-black text-black" 
                    placeholder="john@example.com" 
                  />
              </div>
@@ -216,7 +216,7 @@ export const ApplicationForm = ({ jobs, selectedJobId }: ApplicationFormProps) =
                    name="linkedinUrl"
                    value={formData.linkedinUrl}
                    onChange={handleInputChange}
-                   className="w-full p-4 bg-[var(--color-stone-50)] border border-[var(--color-stone-200)] rounded-xl focus:outline-none focus:border-[var(--color-brand-red)] transition-colors" 
+                   className="w-full p-4 bg-[var(--color-stone-50)] border border-[var(--color-stone-200)] rounded-xl focus:outline-none focus:border-[var(--color-brand-red)] transition-colors placeholder-black text-black" 
                    placeholder="https://linkedin.com/in/..." 
                  />
              </div>
@@ -233,7 +233,7 @@ export const ApplicationForm = ({ jobs, selectedJobId }: ApplicationFormProps) =
                    name="motivationLetter"
                    value={formData.motivationLetter}
                    onChange={handleInputChange}
-                   className="w-full p-4 bg-[var(--color-stone-50)] border border-[var(--color-stone-200)] rounded-xl focus:outline-none focus:border-[var(--color-brand-red)] transition-colors h-40 resize-y" 
+                   className="w-full p-4 bg-[var(--color-stone-50)] border border-[var(--color-stone-200)] rounded-xl focus:outline-none focus:border-[var(--color-brand-red)] transition-colors h-40 resize-y placeholder-black text-black" 
                    placeholder="¿Por qué eres el candidato ideal para ERM Intelligence?"
                  ></textarea>
              </div>
