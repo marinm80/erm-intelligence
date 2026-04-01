@@ -5,6 +5,7 @@ import { LandingPage } from './pages/LandingPage';
 import { CareersPage } from './pages/CareersPage';
 import { AboutPage } from './pages/AboutPage';
 import ScrollToTop from './components/ScrollToTop';
+import JobDetailPage from './pages/JobDetailPage';
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
           <Route path="/" element={<LandingPage />} />
           <Route path="/about" element={<AboutPage />} />
           <Route path="/careers" element={<CareersPage />} />
+          <Route path="/careers/:jobId" element={<JobDetailPage />} />
         </Routes>
 
         <Footer />
