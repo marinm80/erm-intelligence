@@ -1,10 +1,10 @@
 @import "tailwindcss";
 
-:root {
+@theme {
   /* Brand Colors */
   --color-brand-red: #E42313;
   --color-brand-dark: #0D0D0D;
-  
+
   /* Technical Warm Palette */
   --color-stone-50: #FAFAF9;
   --color-stone-100: #F1F1F1;
@@ -12,9 +12,8 @@
   --color-stone-400: #A8A29E;
   --color-stone-500: #78716C;
   --color-stone-800: #292524;
-}
 
-@theme {
+  /* Fonts */
   --font-display: "Space Grotesk", sans-serif;
   --font-sans: "Inter", sans-serif;
   --font-mono: "JetBrains Mono", monospace;

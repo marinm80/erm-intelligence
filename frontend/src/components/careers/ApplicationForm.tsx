@@ -148,18 +148,18 @@ export const ApplicationForm = ({ jobs, selectedJobId }: ApplicationFormProps) =
   }
 
   return (
-    <section id="application-form" className="py-24 bg-white border-t border-[var(--color-stone-200)]">
+    <section id="application-form" className="py-24 bg-white border-t border-stone-200">
       <div className="container-custom max-w-4xl mx-auto space-y-12">
         <div className="text-center space-y-4">
-          <h2 className="text-3xl md:text-5xl font-display font-semibold text-[var(--color-stone-800)] tracking-tight">
+          <h2 className="text-3xl md:text-5xl font-display font-semibold text-stone-800 tracking-tight">
             Aplica Ahora
           </h2>
-          <p className="text-[var(--color-stone-500)] text-lg">
+          <p className="text-stone-500 text-lg">
             Completa el formulario y cuéntanos por qué eres el fit ideal para ERM Intelligence.
           </p>
         </div>
 
-        <form onSubmit={handleSubmit} className="bg-white p-8 md:p-12 rounded-2xl border border-[var(--color-stone-200)] shadow-lg space-y-8">
+        <form onSubmit={handleSubmit} className="bg-white p-8 md:p-12 rounded-2xl border border-stone-200 shadow-lg space-y-8">
           {status === 'error' && (
             <div className="bg-red-50 border border-red-200 text-red-700 p-4 rounded-lg flex items-start gap-3">
               <AlertCircle className="w-5 h-5 flex-shrink-0 mt-0.5" />
@@ -169,13 +169,13 @@ export const ApplicationForm = ({ jobs, selectedJobId }: ApplicationFormProps) =
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
              <div className="space-y-2 md:col-span-2">
-                 <label className="text-xs font-bold uppercase tracking-wider text-[var(--color-stone-500)]">Cargo al que aplicas *</label>
+                 <label className="text-xs font-bold uppercase tracking-wider text-stone-500">Cargo al que aplicas *</label>
                  <select 
                    required
                    name="positionId"
                    value={formData.positionId}
                    onChange={handleInputChange}
-                   className="w-full p-4 bg-[var(--color-stone-50)] border border-[var(--color-stone-200)] rounded-xl focus:outline-none focus:border-[var(--color-brand-red)] focus:ring-1 focus:ring-[var(--color-brand-red)] transition-all font-display text-black"
+                   className="w-full p-4 bg-stone-50 border border-stone-200 rounded-xl focus:outline-none focus:border-brand-red focus:ring-1 focus:ring-brand-red transition-all font-display text-black"
                  >
                    <option value="" disabled>Selecciona una posición</option>
                    {jobs.filter(j => j.isActive).map(job => (
@@ -185,46 +185,46 @@ export const ApplicationForm = ({ jobs, selectedJobId }: ApplicationFormProps) =
              </div>
 
              <div className="space-y-2">
-                 <label className="text-xs font-bold uppercase tracking-wider text-[var(--color-stone-500)]">Nombre Completo *</label>
+                 <label className="text-xs font-bold uppercase tracking-wider text-stone-500">Nombre Completo *</label>
                  <input 
                    required minLength={3}
                    name="fullName"
                    value={formData.fullName}
                    onChange={handleInputChange}
                    type="text" 
-                   className="w-full p-4 bg-[var(--color-stone-50)] border border-[var(--color-stone-200)] rounded-xl focus:outline-none focus:border-[var(--color-brand-red)] transition-colors placeholder-black text-black" 
+                   className="w-full p-4 bg-stone-50 border border-stone-200 rounded-xl focus:outline-none focus:border-brand-red transition-colors placeholder-black text-black" 
                    placeholder="John Doe" 
                  />
              </div>
 
              <div className="space-y-2">
-                 <label className="text-xs font-bold uppercase tracking-wider text-[var(--color-stone-500)]">Email Comercial *</label>
+                 <label className="text-xs font-bold uppercase tracking-wider text-stone-500">Email Comercial *</label>
                  <input 
                    required type="email"
                    name="email"
                    value={formData.email}
                    onChange={handleInputChange}
-                   className="w-full p-4 bg-[var(--color-stone-50)] border border-[var(--color-stone-200)] rounded-xl focus:outline-none focus:border-[var(--color-brand-red)] transition-colors placeholder-black text-black" 
+                   className="w-full p-4 bg-stone-50 border border-stone-200 rounded-xl focus:outline-none focus:border-brand-red transition-colors placeholder-black text-black" 
                    placeholder="john@example.com" 
                  />
              </div>
 
              <div className="space-y-2 md:col-span-2">
-                 <label className="text-xs font-bold uppercase tracking-wider text-[var(--color-stone-500)]">LinkedIn / Portfolio URL</label>
+                 <label className="text-xs font-bold uppercase tracking-wider text-stone-500">LinkedIn / Portfolio URL</label>
                  <input 
                    type="url"
                    name="linkedinUrl"
                    value={formData.linkedinUrl}
                    onChange={handleInputChange}
-                   className="w-full p-4 bg-[var(--color-stone-50)] border border-[var(--color-stone-200)] rounded-xl focus:outline-none focus:border-[var(--color-brand-red)] transition-colors placeholder-black text-black" 
+                   className="w-full p-4 bg-stone-50 border border-stone-200 rounded-xl focus:outline-none focus:border-brand-red transition-colors placeholder-black text-black" 
                    placeholder="https://linkedin.com/in/..." 
                  />
              </div>
 
              <div className="space-y-2 md:col-span-2">
-                 <label className="text-xs font-bold uppercase tracking-wider text-[var(--color-stone-500)] flex justify-between">
+                 <label className="text-xs font-bold uppercase tracking-wider text-stone-500 flex justify-between">
                    <span>Carta de Motivación / Pitch *</span>
-                   <span className="font-mono text-[var(--color-stone-400)] font-normal normal-case">
+                   <span className="font-mono text-stone-400 font-normal normal-case">
                      {formData.motivationLetter?.length || 0}/800
                    </span>
                  </label>
@@ -233,19 +233,19 @@ export const ApplicationForm = ({ jobs, selectedJobId }: ApplicationFormProps) =
                    name="motivationLetter"
                    value={formData.motivationLetter}
                    onChange={handleInputChange}
-                   className="w-full p-4 bg-[var(--color-stone-50)] border border-[var(--color-stone-200)] rounded-xl focus:outline-none focus:border-[var(--color-brand-red)] transition-colors h-40 resize-y placeholder-black text-black" 
+                   className="w-full p-4 bg-stone-50 border border-stone-200 rounded-xl focus:outline-none focus:border-brand-red transition-colors h-40 resize-y placeholder-black text-black" 
                    placeholder="¿Por qué eres el candidato ideal para ERM Intelligence?"
                  ></textarea>
              </div>
 
              <div className="space-y-2 md:col-span-2">
-                 <label className="text-xs font-bold uppercase tracking-wider text-[var(--color-stone-500)]">Sube tu CV (PDF o Word) *</label>
+                 <label className="text-xs font-bold uppercase tracking-wider text-stone-500">Sube tu CV (PDF o Word) *</label>
                  <div 
                    onDragOver={handleDragOver}
                    onDragLeave={handleDragLeave}
                    onDrop={handleDrop}
                    className={`relative border-2 border-dashed rounded-xl p-8 text-center transition-colors
-                     ${isDragging ? 'border-[var(--color-brand-red)] bg-red-50/50' : 'border-[var(--color-stone-200)] bg-[var(--color-stone-50)] hover:border-[var(--color-stone-400)]'}
+                     ${isDragging ? 'border-brand-red bg-red-50/50' : 'border-stone-200 bg-stone-50 hover:border-stone-400'}
                    `}
                  >
                    <input 
@@ -258,18 +258,18 @@ export const ApplicationForm = ({ jobs, selectedJobId }: ApplicationFormProps) =
                    
                    {!file ? (
                      <div className="flex flex-col items-center gap-3">
-                       <div className="w-12 h-12 bg-white rounded-full flex items-center justify-center shadow-sm border border-[var(--color-stone-200)]">
-                         <UploadCloud className="w-5 h-5 text-[var(--color-stone-500)]" />
+                       <div className="w-12 h-12 bg-white rounded-full flex items-center justify-center shadow-sm border border-stone-200">
+                         <UploadCloud className="w-5 h-5 text-stone-500" />
                        </div>
                        <div>
-                         <p className="font-display font-bold text-[var(--color-stone-800)] text-lg">
-                           Arrastra tu CV aquí o <button type="button" onClick={() => fileInputRef.current?.click()} className="text-[var(--color-brand-red)] hover:underline">explorar</button>
+                         <p className="font-display font-bold text-stone-800 text-lg">
+                           Arrastra tu CV aquí o <button type="button" onClick={() => fileInputRef.current?.click()} className="text-brand-red hover:underline">explorar</button>
                          </p>
-                         <p className="text-xs text-[var(--color-stone-400)] mt-1">Soporta PDF, DOC, DOCX. Max 5MB.</p>
+                         <p className="text-xs text-stone-400 mt-1">Soporta PDF, DOC, DOCX. Max 5MB.</p>
                        </div>
                        {errorMessage && !formData.positionId && (
                            // Hide file error here if it's general submit error, wait, let's just show standard file errors
-                           <p className="text-xs text-[var(--color-brand-red)] flex items-center gap-1 font-bold mt-2"><AlertCircle className="w-3 h-3"/> {errorMessage === 'Debes adjuntar tu CV' ? '' : errorMessage}</p>
+                           <p className="text-xs text-brand-red flex items-center gap-1 font-bold mt-2"><AlertCircle className="w-3 h-3"/> {errorMessage === 'Debes adjuntar tu CV' ? '' : errorMessage}</p>
                        )}
                      </div>
                    ) : (
@@ -278,12 +278,12 @@ export const ApplicationForm = ({ jobs, selectedJobId }: ApplicationFormProps) =
                           <CheckCircle2 className="w-5 h-5 text-green-600" />
                         </div>
                         <div className="flex items-center gap-4">
-                           <span className="font-display font-medium text-[var(--color-stone-800)]">{file.name}</span>
+                           <span className="font-display font-medium text-stone-800">{file.name}</span>
                            <button type="button" onClick={removeFile} className="p-1 hover:bg-red-100 text-red-500 rounded-md transition" title="Remover archivo">
                              <X className="w-4 h-4" />
                            </button>
                         </div>
-                        <p className="text-xs text-[var(--color-stone-400)] mt-1 font-mono">{(file.size / 1024 / 1024).toFixed(2)} MB</p>
+                        <p className="text-xs text-stone-400 mt-1 font-mono">{(file.size / 1024 / 1024).toFixed(2)} MB</p>
                      </div>
                    )}
                  </div>
@@ -292,7 +292,7 @@ export const ApplicationForm = ({ jobs, selectedJobId }: ApplicationFormProps) =
 
           <button 
             disabled={status === 'loading'}
-            className="w-full py-4 bg-[var(--color-brand-red)] text-white font-display font-bold text-lg rounded-xl hover:bg-red-700 transition-all shadow-xl shadow-red-500/20 flex items-center justify-center disabled:opacity-70 disabled:cursor-not-allowed group"
+            className="w-full py-4 bg-brand-red text-white font-display font-bold text-lg rounded-xl hover:bg-red-700 transition-all shadow-xl shadow-red-500/20 flex items-center justify-center disabled:opacity-70 disabled:cursor-not-allowed group"
           >
             {status === 'loading' ? (
               <span className="flex items-center gap-2">

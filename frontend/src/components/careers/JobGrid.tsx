@@ -17,10 +17,10 @@ export const JobGrid = ({ jobs, onApply }: JobGridProps) => {
   );
 
   return (
-    <section className="py-24 bg-[var(--color-stone-50)]">
+    <section className="py-24 bg-stone-50">
       <div className="container-custom space-y-12">
         <div className="flex flex-col md:flex-row justify-between items-center gap-6">
-          <h2 className="text-3xl md:text-4xl font-display font-semibold text-[var(--color-stone-800)] tracking-tight">
+          <h2 className="text-3xl md:text-4xl font-display font-semibold text-stone-800 tracking-tight">
             {t('careers.open_positions')}
           </h2>
           
@@ -31,8 +31,8 @@ export const JobGrid = ({ jobs, onApply }: JobGridProps) => {
                 onClick={() => setFilterDept(dept as any)}
                 className={`px-4 py-2 rounded-full text-sm font-bold font-display transition-colors ${
                   filterDept === dept 
-                    ? 'bg-[var(--color-brand-red)] text-white' 
-                    : 'bg-white border border-[var(--color-stone-200)] text-[var(--color-stone-500)] hover:bg-[var(--color-stone-100)]'
+                    ? 'bg-brand-red text-white' 
+                    : 'bg-white border border-stone-200 text-stone-500 hover:bg-stone-100'
                 }`}
               >
                 {dept === 'All' ? t('careers.all') : dept}
@@ -48,7 +48,7 @@ export const JobGrid = ({ jobs, onApply }: JobGridProps) => {
             ))
           ) : (
             <div className="col-span-full text-center py-12">
-              <p className="text-[var(--color-stone-500)]">{t('careers.empty')}</p>
+              <p className="text-stone-500">{t('careers.empty')}</p>
             </div>
           )}
         </div>

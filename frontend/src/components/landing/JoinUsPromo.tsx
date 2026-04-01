@@ -60,7 +60,7 @@ export const JoinUsPromo = () => {
                   <div className="w-1.5 h-1.5 rounded-full bg-(--color-brand-red) mt-2"></div>
                   <div>
                     <h4 className="font-display font-bold text-lg">{t('join_us.benefits.3_title')}</h4>
-                    <p className="text-[var(--color-stone-400)] text-sm">{t('join_us.benefits.3_desc')}</p>
+                    <p className="text-stone-400 text-sm">{t('join_us.benefits.3_desc')}</p>
                   </div>
                 </li>
               </ul>
