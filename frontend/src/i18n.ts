@@ -63,6 +63,22 @@ const resources = {
           "requirements": "Requisitos",
           "apply_title": "Aplicar a esta posición",
           "not_found": "Oferta no encontrada"
+        },
+        "departments": {
+          "Engineering": "Ingeniería",
+          "Product": "Producto",
+          "Business": "Negocios",
+          "Security": "Seguridad"
+        },
+        "modalities": {
+          "Remoto": "Remoto",
+          "Híbrido": "Híbrido",
+          "Presencial": "Presencial"
+        },
+        "contracts": {
+          "Full-time": "Tiempo completo",
+          "Part-time": "Medio tiempo",
+          "Freelance": "Freelance"
         }
       },
       "hero": {
@@ -220,6 +236,22 @@ const resources = {
           "requirements": "Requirements",
           "apply_title": "Apply for this position",
           "not_found": "Position not found"
+        },
+        "departments": {
+          "Engineering": "Engineering",
+          "Product": "Product",
+          "Business": "Business",
+          "Security": "Security"
+        },
+        "modalities": {
+          "Remoto": "Remote",
+          "Híbrido": "Hybrid",
+          "Presencial": "On-site"
+        },
+        "contracts": {
+          "Full-time": "Full-time",
+          "Part-time": "Part-time",
+          "Freelance": "Freelance"
         }
       },
       "hero": {
