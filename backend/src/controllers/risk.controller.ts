@@ -1,5 +1,5 @@
 import { Request, Response } from 'express';
-import { RiskService } from '../services/risk.service.ts';
+import { RiskService } from '../services/risk.service';
 
 const riskService = new RiskService();
 

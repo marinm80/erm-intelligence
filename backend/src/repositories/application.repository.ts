@@ -1,6 +1,6 @@
-import { Application } from '../models/application.model.ts';
-import { IBaseRepository } from './base.repository.ts';
-import pool from '../config/database.ts';
+import { Application } from '../models/application.model';
+import { IBaseRepository } from './base.repository';
+import pool from '../config/database';
 
 export class ApplicationRepository implements IBaseRepository<Application> {
   async findAll(): Promise<Application[]> {

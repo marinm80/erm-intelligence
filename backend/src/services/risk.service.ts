@@ -1,5 +1,5 @@
-import { Risk } from '../models/risk.model.ts';
-import { RiskRepository } from '../repositories/risk.repository.ts';
+import { Risk } from '../models/risk.model';
+import { RiskRepository } from '../repositories/risk.repository';
 
 export class RiskService {
   private repository: RiskRepository;

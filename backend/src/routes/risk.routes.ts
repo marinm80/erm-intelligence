@@ -5,7 +5,7 @@ import {
   createRisk,
   updateRisk,
   deleteRisk,
-} from '../controllers/risk.controller.ts';
+} from '../controllers/risk.controller';
 
 const router = Router();
 

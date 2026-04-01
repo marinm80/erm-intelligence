@@ -1,6 +1,6 @@
-import { Risk } from '../models/risk.model.ts';
-import { IBaseRepository } from './base.repository.ts';
-import pool from '../config/database.ts';
+import { Risk } from '../models/risk.model';
+import { IBaseRepository } from './base.repository';
+import pool from '../config/database';
 
 export class RiskRepository implements IBaseRepository<Risk> {
   async findAll(): Promise<Risk[]> {

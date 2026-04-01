@@ -4,7 +4,7 @@ import {
   upload,
   getAllApplications,
   getApplicationById
-} from '../controllers/application.controller.ts';
+} from '../controllers/application.controller';
 
 const router = Router();
 

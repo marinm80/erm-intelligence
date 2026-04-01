@@ -1,5 +1,5 @@
-import { Application } from '../models/application.model.ts';
-import { ApplicationRepository } from '../repositories/application.repository.ts';
+import { Application } from '../models/application.model';
+import { ApplicationRepository } from '../repositories/application.repository';
 
 export class ApplicationService {
   private repository: ApplicationRepository;

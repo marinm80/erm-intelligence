@@ -3,8 +3,8 @@ import multer from 'multer';
 import { v4 as uuidv4 } from 'uuid';
 import path from 'path';
 import fs from 'fs';
-import { ApplicationService } from '../services/application.service.ts';
-import { Application } from '../models/application.model.ts';
+import { ApplicationService } from '../services/application.service';
+import { Application } from '../models/application.model';
 
 const applicationService = new ApplicationService();
 

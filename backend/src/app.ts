@@ -3,8 +3,8 @@ import cors from 'cors';
 import helmet from 'helmet';
 import morgan from 'morgan';
 import dotenv from 'dotenv';
-import riskRoutes from './routes/risk.routes.ts';
-import applicationRoutes from './routes/application.routes.ts';
+import riskRoutes from './routes/risk.routes';
+import applicationRoutes from './routes/application.routes';
 
 dotenv.config();
 
