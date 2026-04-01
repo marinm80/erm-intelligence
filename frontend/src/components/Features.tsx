@@ -1,30 +1,33 @@
 import { Eye, Shield, FileCheck } from 'lucide-react';
-
-const PILARES = [
-  {
-    icon: <Eye className="w-8 h-8 text-[var(--color-brand-red)]" />,
-    title: "Identificación Proactiva",
-    description: "Detección temprana de riesgos mediante algoritmos avanzados de IA y análisis predictivo de datos corporativos."
-  },
-  {
-    icon: <Shield className="w-8 h-8 text-[var(--color-brand-red)]" />,
-    title: "Mitigación Estratégica",
-    description: "Soluciones personalizadas para minimizar impactos negativos y optimizar la toma de decisiones en escenarios críticos."
-  },
-  {
-    icon: <FileCheck className="w-8 h-8 text-[var(--color-brand-red)]" />,
-    title: "Gobernanza & Cumplimiento",
-    description: "Automatización de procesos de auditoría y marcos normativos para asegurar la resiliencia y el cumplimiento total."
-  }
-];
+import { useTranslation } from 'react-i18next';
 
 export const Features = () => {
+  const { t } = useTranslation();
+
+  const PILARES = [
+    {
+      icon: <Eye className="w-8 h-8 text-[var(--color-brand-red)]" />,
+      title: t('features.pilares.1_title'),
+      description: t('features.pilares.1_desc')
+    },
+    {
+      icon: <Shield className="w-8 h-8 text-[var(--color-brand-red)]" />,
+      title: t('features.pilares.2_title'),
+      description: t('features.pilares.2_desc')
+    },
+    {
+      icon: <FileCheck className="w-8 h-8 text-[var(--color-brand-red)]" />,
+      title: t('features.pilares.3_title'),
+      description: t('features.pilares.3_desc')
+    }
+  ];
+
   return (
     <section className="py-24 bg-white">
       <div className="container-custom">
         <div className="text-center mb-20 space-y-4">
-          <h2 className="text-3xl md:text-5xl text-[var(--color-stone-800)]">Los 3 Pilares de ERM <span className="text-[var(--color-brand-red)]">Intelligence</span></h2>
-          <p className="text-[var(--color-stone-500)] max-w-2xl mx-auto">Nuestra plataforma se sustenta en tres ejes estratégicos diseñados para ofrecer seguridad y visión a largo plazo.</p>
+          <h2 className="text-3xl md:text-5xl text-[var(--color-stone-800)]">{t('features.title1')} <span className="text-[var(--color-brand-red)]">{t('features.title2')}</span></h2>
+          <p className="text-[var(--color-stone-500)] max-w-2xl mx-auto">{t('features.subtitle')}</p>
         </div>
         
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">

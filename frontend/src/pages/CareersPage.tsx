@@ -1,6 +1,4 @@
 import { useState, useCallback } from 'react';
-import { Navbar } from '../components/Navbar';
-import { Footer } from '../components/Footer';
 import { CareersHero } from '../components/careers/CareersHero';
 import { JobGrid } from '../components/careers/JobGrid';
 import { ApplicationForm } from '../components/careers/ApplicationForm';
@@ -21,9 +19,7 @@ export const CareersPage = () => {
   }, []);
 
   return (
-    <div className="min-h-screen bg-white">
-      <Navbar />
-      
+    <div className="pt-20">
       <main>
         <CareersHero />
         
@@ -37,8 +33,6 @@ export const CareersPage = () => {
           selectedJobId={selectedJobId}
         />
       </main>
-
-      <Footer />
     </div>
   );
 };

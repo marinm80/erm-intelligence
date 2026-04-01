@@ -26,15 +26,16 @@ Este documento establece las reglas crÃ­ticas y el progreso del proyecto ERM I
 - [x] Crear sección de "Contáctenos".
 
 ### Phase 3: Frontend Development (MVP) 🏗️
-- **Landing Page:**
+- **Landing Page & Static Pages:**
     - [x] Navbar con badge 'HIRING' y botón de Cotización.
     - [x] Hero Section responsivo.
     - [x] Sección "Los 3 Pilares" (Identificación, Mitigación, Gobernanza).
     - [x] Sección de Soluciones (Refactorizada).
     - [x] Sección de Contacto (Formulario de solicitud de servicios).
+    - [x] Sección de Sobre Nosotros (AboutUs Page refactorizada).
     - [x] Footer corporativo sincronizado con Pencil.
 - **Careers Portal:**
-    - [x] Routing con react-router-dom (`/` y `/careers`).
+    - [x] Routing con react-router-dom (`/`, `/careers`, `/about`).
     - [x] CareersPage layout con Hero.
     - [x] JobGrid y JobCard (Listado de posiciones con filtro).
     - [x] ApplicationForm con soporte drag & drop de CV.
@@ -61,3 +62,4 @@ Este documento establece las reglas crÃ­ticas y el progreso del proyecto ERM I
 - **2026-03-30:** Integración de sección 'Careers' y simplificación estratégica (eliminación de Academy/Seguridad).
 - **2026-03-30:** Implementación de flujo de Cotización y sección de Contacto. Refactoring completo de componentes frontend.
 - **2026-03-30:** Desarrollo integral de Careers (Job portal, Routing, `multer` file upload, PostgreSQL repo). Corrección de errores de ES Modules y tipado estricto.
+- **2026-03-30:** Internacionalización (i18n), diseño de Logo SVG (Red Neuronal) en código puro, corrección UI en Navbar/Footer e integración de video promocional en el Hero Section.

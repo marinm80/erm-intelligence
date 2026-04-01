@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import type { JobPosition, Department } from '../../types/careers';
 import { JobCard } from './JobCard';
+import { useTranslation } from 'react-i18next';
 
 interface JobGridProps {
   jobs: JobPosition[];
@@ -8,6 +9,7 @@ interface JobGridProps {
 }
 
 export const JobGrid = ({ jobs, onApply }: JobGridProps) => {
+  const { t } = useTranslation();
   const [filterDept, setFilterDept] = useState<Department | 'All'>('All');
 
   const filteredJobs = jobs.filter(
@@ -19,7 +21,7 @@ export const JobGrid = ({ jobs, onApply }: JobGridProps) => {
       <div className="container-custom space-y-12">
         <div className="flex flex-col md:flex-row justify-between items-center gap-6">
           <h2 className="text-3xl md:text-4xl font-display font-semibold text-[var(--color-stone-800)] tracking-tight">
-            Posiciones Abiertas
+            {t('careers.open_positions')}
           </h2>
           
           <div className="flex flex-wrap gap-2">
@@ -33,7 +35,7 @@ export const JobGrid = ({ jobs, onApply }: JobGridProps) => {
                     : 'bg-white border border-[var(--color-stone-200)] text-[var(--color-stone-500)] hover:bg-[var(--color-stone-100)]'
                 }`}
               >
-                {dept === 'All' ? 'Todos' : dept}
+                {dept === 'All' ? t('careers.all') : dept}
               </button>
             ))}
           </div>
@@ -46,7 +48,7 @@ export const JobGrid = ({ jobs, onApply }: JobGridProps) => {
             ))
           ) : (
             <div className="col-span-full text-center py-12">
-              <p className="text-[var(--color-stone-500)]">No hay posiciones abiertas en este momento para este filtro.</p>
+              <p className="text-[var(--color-stone-500)]">{t('careers.empty')}</p>
             </div>
           )}
         </div>
