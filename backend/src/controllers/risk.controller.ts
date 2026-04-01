@@ -14,7 +14,7 @@ export const getAllRisks = async (req: Request, res: Response) => {
 
 export const getRiskById = async (req: Request, res: Response) => {
   try {
-    const risk = await riskService.getRiskById(req.params['id']!);
+    const risk = await riskService.getRiskById(String(req.params.id));
     if (!risk) return res.status(404).json({ message: 'Risk not found' });
     res.json(risk);
   } catch (error: any) {
@@ -33,7 +33,7 @@ export const createRisk = async (req: Request, res: Response) => {
 
 export const updateRisk = async (req: Request, res: Response) => {
   try {
-    const risk = await riskService.updateRisk(req.params['id']!, req.body);
+    const risk = await riskService.updateRisk(String(req.params.id), req.body);
     if (!risk) return res.status(404).json({ message: 'Risk not found' });
     res.json(risk);
   } catch (error: any) {
@@ -43,7 +43,7 @@ export const updateRisk = async (req: Request, res: Response) => {
 
 export const deleteRisk = async (req: Request, res: Response) => {
   try {
-    const success = await riskService.deleteRisk(req.params['id']!);
+    const success = await riskService.deleteRisk(String(req.params.id));
     if (!success) return res.status(404).json({ message: 'Risk not found' });
     res.status(204).send();
   } catch (error: any) {

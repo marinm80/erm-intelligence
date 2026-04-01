@@ -84,7 +84,7 @@ export const getAllApplications = async (req: Request, res: Response) => {
 
 export const getApplicationById = async (req: Request, res: Response) => {
   try {
-    const app = await applicationService.getApplicationById(req.params['id']!);
+    const app = await applicationService.getApplicationById(String(req.params.id));
     if (!app) return res.status(404).json({ message: 'Application not found' });
     res.json(app);
   } catch (error: any) {
